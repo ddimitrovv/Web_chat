@@ -58,6 +58,11 @@ class CustomUser(PermissionsMixin, AbstractBaseUser):
 
     objects = CustomUserManager()
 
+    # Deactivate user instead of deleting the user.
+    def deactivate_user(self):
+        self.is_active = False
+        self.save()
+
     def __str__(self):
         return self.username
 
