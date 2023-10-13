@@ -23,10 +23,12 @@ class CustomMessage(models.Model):
     is_seen = models.BooleanField(default=False)
     is_deleted = models.BooleanField(default=False)
 
+    # Set to true when the message is seen by the recipient.
     def mark_as_seen(self):
         self.is_seen = True
         self.save()
 
+    # Mark the message as deleted instead of deleting the message.
     def mark_as_deleted(self):
         self.is_deleted = True
         self.save()
