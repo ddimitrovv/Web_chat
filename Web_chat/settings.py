@@ -25,7 +25,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     'Web_chat.users',
-    'Web_chat.messages',
+    'Web_chat.user_messages',
 
 ]
 
