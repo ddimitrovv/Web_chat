@@ -9,13 +9,11 @@ class CustomMessage(models.Model):
     sender = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
-        on_update=models.CASCADE,
         related_name='sent_messages'
     )
     recipient = models.ForeignKey(
         CustomUser,
         on_delete=models.CASCADE,
-        on_update=models.CASCADE,
         related_name='received_messages'
     )
     content = models.TextField(max_length=MESSAGE_MAX_LEN)
