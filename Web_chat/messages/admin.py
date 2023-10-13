@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from Web_chat.messages.models import CustomMessage
+
+
+@admin.register(CustomMessage)
+class CustomMessageAdmin(admin.ModelAdmin):
+    list_display = ['sender', 'recipient', 'content', 'timestamp']
